@@ -269,6 +269,7 @@ const EducationsUser = () => {
                   id="endDate"
                   placeholder="Study or Internship"
                   value={endDate}
+                  onChange={handleChange}
                 />
               )}
               <div>

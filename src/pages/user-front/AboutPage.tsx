@@ -13,13 +13,14 @@ import { useAuth } from "../../states/auth";
 const AboutPage = () => {
   const { getSkills, skillsData, loading } = useSkills();
   const { getUserData, userData } = useUserInfo();
-  const {userId} = useAuth();
+  const { userId } = useAuth();
 
   useEffect(() => {
     getSkills(userId);
     getUserData();
   }, [getSkills, userId, getUserData]);
-  const { fields, birthday, phoneNumber, email, address, info,photo } = userData;
+  const { fields, birthday, phoneNumber, email, address, info, photo } =
+    userData;
 
   const getDate = (date: string) => {
     const month = [
@@ -101,7 +102,7 @@ const AboutPage = () => {
         <img
           style={{ objectPosition: "top" }}
           className="w-[350px] max-[800px]:w-[400px] max-[800px]:mx-auto max-[600px]:w-full h-[400px] max-[800px]:h-[500px] max-[600px]:h-[350px] max-[400px]:h-[250px] object-cover rounded"
-          src={IMGURL+photo}
+          src={IMGURL + photo}
           alt=""
         />
         <div className="w-[60%] max-[800px]:w-full">
@@ -159,45 +160,6 @@ const AboutPage = () => {
         {skillsData?.map((skill: skillType) => (
           <SkillsCard {...skill} />
         ))}
-      </div>
-      <div className="startStyle pt-10 pb-4">
-        <h4>Testimonials</h4>
-        <div></div>
-      </div>
-      <div className="slider__wrapper">
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={2}
-          navigation
-          pagination={false}
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-            },
-
-            480: {
-              slidesPerView: 2,
-            },
-
-            768: {
-              slidesPerView: 3,
-            },
-          }}
-        >
-          {arr.map((el) => (
-            <SwiperSlide key={el.title}>
-              <div className="testimonial-item">
-                <img className="py-3 h-[320px] w-full object-cover object-top" src={img} alt="" />
-                <h3>Umrzoq Araqulov</h3>
-                <h4 className="hidden">{el.title}</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Obcaecati sapiente saepe itaque perferendis tempore fuga cum.
-                </p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
       </div>
       {loading ? (
         <div className="fixed z-30 bg-white bg-opacity-20 backdrop-blur-md flex justify-center items-center top-0 left-0 w-screen h-screen">
