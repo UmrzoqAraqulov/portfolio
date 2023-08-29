@@ -1,0 +1,64 @@
+.load {
+  width: 60%;
+  height: 10px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+}
+
+.load::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(9, 188, 9);
+  width: 0%;
+  height: 100%;
+  border-radius: 2px;
+  animation: load 3.5s ease-in-out infinite;
+  box-shadow: rgb(9, 188, 9) 0px 2px 29px 0px;
+}
+
+.loading {
+  display: flex;
+  height: calc(100vh - 140px);
+  align-items: center;
+  justify-content: center;
+}
+
+.contain {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes load {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    right: 0;
+    left: unset;
+  }
+}
+
+@keyframes animate8345 {
+
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.loadr {
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  background: linear-gradient(to right, #2d60ec, #3ccfda);
+  font-size: 30px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: animate8345 9s linear infinite;
+  font-weight: bold;
+}

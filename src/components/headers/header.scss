@@ -1,0 +1,11 @@
+nav{
+  // display: flex;
+  // align-items: center;
+  border-bottom: 1.9px solid #37363D;
+  padding: 5px 10px 10px !important;
+  .nav-name{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
