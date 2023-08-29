@@ -1,0 +1,50 @@
+.wrapper {
+  height: 60px;
+  display: flex;
+  gap: 4px;
+}
+
+.words {
+  overflow: hidden;
+}
+
+.wrapper-item {
+  height: 100%;
+  width: auto;
+  color: #18d26e;
+  animation: spin_words 10s infinite;
+}
+
+@keyframes spin_words {
+  12% {
+    transform: translateY(-105%);
+  }
+
+  25% {
+    transform: translateY(-100%);
+  }
+
+  37% {
+    transform: translateY(-205%);
+  }
+
+  50% {
+    transform: translateY(-200%);
+  }
+
+  63% {
+    transform: translateY(-93%);
+  }
+
+  75% {
+    transform: translateY(-100%);
+  }
+
+  87% {
+    transform: translateY(+05%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}

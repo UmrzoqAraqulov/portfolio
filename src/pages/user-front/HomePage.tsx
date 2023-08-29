@@ -4,14 +4,20 @@ import Nav from "../../components/nav/Nav";
 import { Link } from "react-router-dom";
 import { useUserInfo } from "../../states/userInfo";
 
+import "./style.scss";
+
 const HomePage = () => {
-  const {getUserData,userData,loading} = useUserInfo();
+  const { getUserData, userData, loading } = useUserInfo();
 
   const [show, setShow] = useState(false);
   const { firstName, lastName, fields } = userData;
-
+  console.log(fields);
+  
+  const resFields = fields[0]?.split(",") || [];
+  console.log(resFields);
+  
   useEffect(() => {
-    getUserData();   
+    getUserData();
   }, [getUserData]);
 
   const styleIcon =
@@ -23,13 +29,17 @@ const HomePage = () => {
           {firstName ? firstName + " " + lastName : "FirstName"}
         </Link>
       </h1>
-      <p className="sm:text-[28px] text-[22px] text-[#cecece] py-3">
-        I'm a passionate{" "}
-        <span className="border-b-2 border-green-500 pb-[5px] text-white">
-          {fields[0]}
-        </span>{" "}
-        from New York
-      </p>
+      <div className="sm:text-[28px] flex items-center gap-x-2 flex-wrap text-[22px] text-[#cecece]">
+        <p>I'm a passionate</p>
+        <p className="pt-3 wrapper">
+          <div className="words">
+            {resFields.map((el,id) => (
+              <p key={id} className="wrapper-item">{el}</p>
+            ))}
+          </div>
+        </p>
+        <p>from Uzbekistan</p>
+      </div>
       <Nav show={show} setShow={setShow} />
       <div className="flex gap-2 mt-8">
         <div className={styleIcon}>
