@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 import { skillType } from "../../types";
 import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useSkills } from "../../states/skills";
 import SkillsCard from "../../components/cards/SkillsCard";
 import { IMGURL } from "../../const";
-import img from "../../assets/images/me.jpg";
 import LoadingFront from "../../components/loading/LoadingFront";
 import { useUserInfo } from "../../states/userInfo";
 import { useAuth } from "../../states/auth";
@@ -48,44 +46,6 @@ const AboutPage = () => {
   };
 
   const styleList = "font-bold text-[17px] max-[400px]:text-[14px]";
-  const arr = [
-    {
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit Obcaecati sapiente saepe itaque perferendis tempore fuga cum id iure libero. Vero ducimus numquam minima nesciunt? Ullam est asperiores ducimus iusto magnam.",
-      name: "Jena Karlis",
-      title: "1",
-    },
-    {
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit Obcaecati sapiente saepe itaque perferendis tempore fuga cum id iure libero. Vero ducimus numquam minima nesciunt? Ullam est asperiores ducimus iusto magnam.",
-      name: "Jena Karlis",
-      title: "12",
-    },
-    {
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit Obcaecati sapiente saepe itaque perferendis tempore fuga cum id iure libero. Vero ducimus numquam minima nesciunt? Ullam est asperiores ducimus iusto magnam.",
-      name: "Jena Karlis",
-      title: "123",
-    },
-    {
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit Obcaecati sapiente saepe itaque perferendis tempore fuga cum id iure libero. Vero ducimus numquam minima nesciunt? Ullam est asperiores ducimus iusto magnam.",
-      name: "Jena Karlis",
-      title: "1234",
-    },
-    {
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit Obcaecati sapiente saepe itaque perferendis tempore fuga cum id iure libero. Vero ducimus numquam minima nesciunt? Ullam est asperiores ducimus iusto magnam.",
-      name: "Jena Karlis",
-      title: "12345",
-    },
-    {
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit Obcaecati sapiente saepe itaque perferendis tempore fuga cum id iure libero. Vero ducimus numquam minima nesciunt? Ullam est asperiores ducimus iusto magnam.",
-      name: "Jena Karlis",
-      title: "123456",
-    },
-  ];
   return (
     <div className="w-full bg-black bg-opacity-80 py-4 px-6 containr">
       <div className="startStyle">
