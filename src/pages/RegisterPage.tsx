@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../states/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
   const { register } = useAuth();
@@ -31,7 +31,7 @@ const RegisterPage = () => {
         <div className="w-[500px] bg-style px-4 min-[400px]:px-[50px] pb-5 min-[400px]:pb-[50px]">
           <h2 className="text-center text-4xl py-3 font-semibold">Register</h2>
           <form
-            className="flex flex-col gap-3"
+            className="flex flex-col gap-[5px]"
             autoComplete="off"
             onSubmit={submit}
           >
@@ -135,10 +135,19 @@ const RegisterPage = () => {
 
             <button
               typeof="submit"
-              className="py-1.5 mt-4 text-xl bg-blue-600 rounded-md hover:bg-blue-700"
+              className="py-1.5 m-3 w-full px-0 mx-0 text-xl bg-blue-600 rounded-md hover:bg-blue-700"
             >
               Register
             </button>
+            <div className="w-full text-center pt-2">
+              <Link
+                to="/login"
+                className=" font-semibold text-xl hover:text-green-500"
+              >
+                Login{" "}
+                <i className="pl-3 fa-solid fa-arrow-right-to-bracket"></i>
+              </Link>
+            </div>
           </form>
         </div>
       </div>
